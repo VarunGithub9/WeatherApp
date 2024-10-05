@@ -94,7 +94,7 @@ const Weather = () => {
           </div>
         </>
       ) : (
-        <p>Loading weather data...</p>
+        <p>Enter the Location...</p>
       )}
     </div>
   );
