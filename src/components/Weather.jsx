@@ -10,7 +10,7 @@ import wind_icon from '../assets/wind.png';
 import humidity_icon from '../assets/humidity.png';
 
 const Weather = () => {
-  const inputRef=useRef()
+  const inputRef = useRef();
   const [weather, setWeather] = useState(null); 
 
   const icons = {
@@ -42,7 +42,6 @@ const Weather = () => {
       const data = await response.json();  
       console.log("Weather data:", data);  
       
-
       const icon = icons[data.weather[0].icon] || clear_icon;
       
       setWeather({
@@ -57,18 +56,17 @@ const Weather = () => {
     }
   };
 
-  const handlekeypress=(e)=>{
-    if(e.key=="Enter"){
-        search(inputRef.current.value)
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      search(inputRef.current.value);
     }
-  }
+  };
+
   return (
     <div className='weathers'>
       <div className='searchBar'>
-        <input type="text" placeholder='search..' ref={inputRef} onKeyDown={handlekeypress}/>
-        <img src={search_icon} alt="Search" onClick={()=>{
-            search(inputRef.current.value)
-        }} />
+        <input type="text" placeholder='Search...' ref={inputRef} onKeyDown={handleKeyPress} />
+        <img src={search_icon} alt="Search" onClick={() => search(inputRef.current.value)} />
       </div>
       
       {weather ? (
