@@ -32,7 +32,7 @@ const Weather = () => {
 
   const search = async (city) => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=fc996bd78772be0240151abad27a994a`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=adb814e83df2b900359c0fe2022ce474`;
       const response = await fetch(url);
 
       if (!response.ok) {
